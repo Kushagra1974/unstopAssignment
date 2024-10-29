@@ -47,6 +47,17 @@ export class SeatComponent implements OnInit  {
       return;
     }
 
+    if(requestedSeats<1){
+      this.errorMessage = 'Requested seat count should be greater that 0';
+      
+      // Clear the error message after 10 seconds
+      setTimeout(() => {
+        this.errorMessage = '';
+      }, 10000);
+      
+      return;
+    }
+
 
     let remainingSeats = this.totalSeats - this.allotedSeatsArray.length;
     let allocatedSeats:Array<Number> = [];

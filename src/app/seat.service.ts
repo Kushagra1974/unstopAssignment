@@ -38,9 +38,7 @@ export class SeatService {
       train[x][y] = 1;
     }
     //calculating if the requested seat can be allocated in the same row
-
-    let finalSeatToAllocate : Array<number> = [] 
-
+ 
     for(let i=0;i<12;i++){
       let vacantSeatCount = 0;
       let vacantSeat: Array<number> = []
