@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en" data-critters-container><head>
+  <meta charset="utf-8">
+  <title>Assignment</title>
+  <base href="/unstopAssignment/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles-5INURTSO.css"><style ng-app-id="ng">[_nghost-ng-c3554892448] {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1[_ngcontent-ng-c3554892448] {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  p[_ngcontent-ng-c3554892448] {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  main[_ngcontent-ng-c3554892448] {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .angular-logo[_ngcontent-ng-c3554892448] {
+    max-width: 9.2rem;
+  }
+
+  .content[_ngcontent-ng-c3554892448] {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content[_ngcontent-ng-c3554892448]   h1[_ngcontent-ng-c3554892448] {
+    margin-top: 1.75rem;
+  }
+
+  .content[_ngcontent-ng-c3554892448]   p[_ngcontent-ng-c3554892448] {
+    margin-top: 1.5rem;
+  }
+
+  .divider[_ngcontent-ng-c3554892448] {
+    width: 1px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .pill-group[_ngcontent-ng-c3554892448] {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill[_ngcontent-ng-c3554892448] {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+  }
+
+  .pill[_ngcontent-ng-c3554892448]:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group[_ngcontent-ng-c3554892448]   .pill[_ngcontent-ng-c3554892448]:nth-child(6n + 1) {
+    --pill-accent: var(--bright-blue);
+  }
+  .pill-group[_ngcontent-ng-c3554892448]   .pill[_ngcontent-ng-c3554892448]:nth-child(6n + 2) {
+    --pill-accent: var(--french-violet);
+  }
+  .pill-group[_ngcontent-ng-c3554892448]   .pill[_ngcontent-ng-c3554892448]:nth-child(6n + 3), 
+   .pill-group[_ngcontent-ng-c3554892448]   .pill[_ngcontent-ng-c3554892448]:nth-child(6n + 4), 
+   .pill-group[_ngcontent-ng-c3554892448]   .pill[_ngcontent-ng-c3554892448]:nth-child(6n + 5) {
+    --pill-accent: var(--hot-red);
+  }
+
+  .pill-group[_ngcontent-ng-c3554892448]   svg[_ngcontent-ng-c3554892448] {
+    margin-inline-start: 0.25rem;
+  }
+
+  .social-links[_ngcontent-ng-c3554892448] {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links[_ngcontent-ng-c3554892448]   path[_ngcontent-ng-c3554892448] {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links[_ngcontent-ng-c3554892448]   a[_ngcontent-ng-c3554892448]:hover   svg[_ngcontent-ng-c3554892448]   path[_ngcontent-ng-c3554892448] {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content[_ngcontent-ng-c3554892448] {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider[_ngcontent-ng-c3554892448] {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }</style><style ng-app-id="ng">.cabin[_ngcontent-ng-c3716761830]{display:flex;flex-direction:column;align-items:center;margin:20px}.row[_ngcontent-ng-c3716761830]{display:flex;justify-content:center;margin:5px 0}.seat[_ngcontent-ng-c3716761830]{width:30px;height:30px;border:1px solid #000;display:flex;align-items:center;justify-content:center;margin:2px;background-color:#fff;transition:background-color .3s}.allocated[_ngcontent-ng-c3716761830]{background-color:#fc0}</style><style ng-app-id="ng">form[_ngcontent-ng-c2197100505]{padding-top:20px;display:flex;flex-direction:column;max-width:300px;text-align:center}button[_ngcontent-ng-c2197100505]{margin-top:10px}</style></head>
+<body><!--nghm-->
+  <app-root _nghost-ng-c3554892448 ng-version="18.2.9" ngh="2" ng-server-context="ssg"><main _ngcontent-ng-c3554892448 class="main"><div _ngcontent-ng-c3554892448 class="content"><app-cabin _ngcontent-ng-c3554892448 _nghost-ng-c3716761830 ngh="0"><div _ngcontent-ng-c3716761830 class="cabin"><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 1 </div><div _ngcontent-ng-c3716761830 class="seat"> 2 </div><div _ngcontent-ng-c3716761830 class="seat"> 3 </div><div _ngcontent-ng-c3716761830 class="seat"> 4 </div><div _ngcontent-ng-c3716761830 class="seat"> 5 </div><div _ngcontent-ng-c3716761830 class="seat"> 6 </div><div _ngcontent-ng-c3716761830 class="seat"> 7 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 8 </div><div _ngcontent-ng-c3716761830 class="seat"> 9 </div><div _ngcontent-ng-c3716761830 class="seat"> 10 </div><div _ngcontent-ng-c3716761830 class="seat"> 11 </div><div _ngcontent-ng-c3716761830 class="seat"> 12 </div><div _ngcontent-ng-c3716761830 class="seat"> 13 </div><div _ngcontent-ng-c3716761830 class="seat"> 14 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 15 </div><div _ngcontent-ng-c3716761830 class="seat"> 16 </div><div _ngcontent-ng-c3716761830 class="seat"> 17 </div><div _ngcontent-ng-c3716761830 class="seat"> 18 </div><div _ngcontent-ng-c3716761830 class="seat"> 19 </div><div _ngcontent-ng-c3716761830 class="seat"> 20 </div><div _ngcontent-ng-c3716761830 class="seat"> 21 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 22 </div><div _ngcontent-ng-c3716761830 class="seat"> 23 </div><div _ngcontent-ng-c3716761830 class="seat"> 24 </div><div _ngcontent-ng-c3716761830 class="seat"> 25 </div><div _ngcontent-ng-c3716761830 class="seat"> 26 </div><div _ngcontent-ng-c3716761830 class="seat"> 27 </div><div _ngcontent-ng-c3716761830 class="seat"> 28 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 29 </div><div _ngcontent-ng-c3716761830 class="seat"> 30 </div><div _ngcontent-ng-c3716761830 class="seat"> 31 </div><div _ngcontent-ng-c3716761830 class="seat"> 32 </div><div _ngcontent-ng-c3716761830 class="seat"> 33 </div><div _ngcontent-ng-c3716761830 class="seat"> 34 </div><div _ngcontent-ng-c3716761830 class="seat"> 35 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 36 </div><div _ngcontent-ng-c3716761830 class="seat"> 37 </div><div _ngcontent-ng-c3716761830 class="seat"> 38 </div><div _ngcontent-ng-c3716761830 class="seat"> 39 </div><div _ngcontent-ng-c3716761830 class="seat"> 40 </div><div _ngcontent-ng-c3716761830 class="seat"> 41 </div><div _ngcontent-ng-c3716761830 class="seat"> 42 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 43 </div><div _ngcontent-ng-c3716761830 class="seat"> 44 </div><div _ngcontent-ng-c3716761830 class="seat"> 45 </div><div _ngcontent-ng-c3716761830 class="seat"> 46 </div><div _ngcontent-ng-c3716761830 class="seat"> 47 </div><div _ngcontent-ng-c3716761830 class="seat"> 48 </div><div _ngcontent-ng-c3716761830 class="seat"> 49 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 50 </div><div _ngcontent-ng-c3716761830 class="seat"> 51 </div><div _ngcontent-ng-c3716761830 class="seat"> 52 </div><div _ngcontent-ng-c3716761830 class="seat"> 53 </div><div _ngcontent-ng-c3716761830 class="seat"> 54 </div><div _ngcontent-ng-c3716761830 class="seat"> 55 </div><div _ngcontent-ng-c3716761830 class="seat"> 56 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 57 </div><div _ngcontent-ng-c3716761830 class="seat"> 58 </div><div _ngcontent-ng-c3716761830 class="seat"> 59 </div><div _ngcontent-ng-c3716761830 class="seat"> 60 </div><div _ngcontent-ng-c3716761830 class="seat"> 61 </div><div _ngcontent-ng-c3716761830 class="seat"> 62 </div><div _ngcontent-ng-c3716761830 class="seat"> 63 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 64 </div><div _ngcontent-ng-c3716761830 class="seat"> 65 </div><div _ngcontent-ng-c3716761830 class="seat"> 66 </div><div _ngcontent-ng-c3716761830 class="seat"> 67 </div><div _ngcontent-ng-c3716761830 class="seat"> 68 </div><div _ngcontent-ng-c3716761830 class="seat"> 69 </div><div _ngcontent-ng-c3716761830 class="seat"> 70 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 71 </div><div _ngcontent-ng-c3716761830 class="seat"> 72 </div><div _ngcontent-ng-c3716761830 class="seat"> 73 </div><div _ngcontent-ng-c3716761830 class="seat"> 74 </div><div _ngcontent-ng-c3716761830 class="seat"> 75 </div><div _ngcontent-ng-c3716761830 class="seat"> 76 </div><div _ngcontent-ng-c3716761830 class="seat"> 77 </div><!----></div><div _ngcontent-ng-c3716761830 class="row"><div _ngcontent-ng-c3716761830 class="seat"> 78 </div><div _ngcontent-ng-c3716761830 class="seat"> 79 </div><div _ngcontent-ng-c3716761830 class="seat"> 80 </div><!----></div><!----></div></app-cabin><app-seat _ngcontent-ng-c3554892448 _nghost-ng-c2197100505 ngh="1"><form _ngcontent-ng-c2197100505 novalidate class="ng-untouched ng-pristine ng-invalid"><label _ngcontent-ng-c2197100505 for="numSeats">Number of Seats:</label><input _ngcontent-ng-c2197100505 id="numSeats" formcontrolname="numSeats" type="number" value class="ng-untouched ng-pristine ng-invalid"><button _ngcontent-ng-c2197100505 type="submit">Submit</button></form><!----><p _ngcontent-ng-c2197100505>Seats Allotted: </p></app-seat></div></main><router-outlet _ngcontent-ng-c3554892448></router-outlet><!----></app-root>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-3MQEULGT.js" type="module"></script>
+
+<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"1":"t0"},"c":{"1":[{"i":"t0","r":1,"t":{"1":"t1"},"c":{"1":[{"i":"t1","r":1,"x":7}]},"x":11},{"i":"t0","r":1,"t":{"1":"t1"},"c":{"1":[{"i":"t1","r":1,"x":3}]}}]}},{"t":{"6":"t2"},"c":{"6":[]}},{"c":{"4":[]}}]}</script></body></html>
