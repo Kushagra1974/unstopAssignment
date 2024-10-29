@@ -1,3 +1,16 @@
+# The data schema Diagram. 
+Seat
+## Seat Schema
+
+| Field        | Type     | Description                                    |
+|--------------|----------|------------------------------------------------|
+| **id**       | ObjectId | Unique identifier for each seat                |
+| **Occupied** | Boolean  | Status of the seat (`true` for occupied, `false` for available) |
+| **seatNumber** | Integer | Number assigned to the seat                    |
+
+
+
+
 # Assignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
