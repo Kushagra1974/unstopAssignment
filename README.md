@@ -1,10 +1,13 @@
 # The data schema Diagram. 
 Seat
-----------------------------
-| id         | ObjectId    |
-| Occupied   | Boolean     |
-| seatNumber | Integer     |
-----------------------------
+## Seat Schema
+
+| Field        | Type     | Description                                    |
+|--------------|----------|------------------------------------------------|
+| **id**       | ObjectId | Unique identifier for each seat                |
+| **Occupied** | Boolean  | Status of the seat (`true` for occupied, `false` for available) |
+| **seatNumber** | Integer | Number assigned to the seat                    |
+
 
 
 
