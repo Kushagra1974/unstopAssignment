@@ -54,7 +54,7 @@ export class SeatService {
         }
 
         if(vacantSeatCount >= seat){
-          return[...allocatedSeats, ...vacantSeat.slice(0, seat)]
+          return [...allocatedSeats, ...vacantSeat.slice(0, seat)].sort((a,b)=>a-b)
         }
 
       }
@@ -89,7 +89,7 @@ export class SeatService {
       let num = seat[0]*7 + seat[1] +1 ;
       output.push(num);
     }
-    return [...allocatedSeats , ...output];
+    return [...allocatedSeats , ...output].sort((a,b)=>a-b);
   }
 
   updateSeats(seats: number) {
@@ -99,6 +99,7 @@ export class SeatService {
   }
 
   strictBook(seats : Array<number>){
-    this.seatsAllottedSource.next(seats)
+    let allocatedSeats = this.seatsAllottedSource.getValue();
+    this.seatsAllottedSource.next([...seats , ...allocatedSeats].sort((a,b)=>a-b))
   } 
 }
