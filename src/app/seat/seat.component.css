@@ -1,0 +1,12 @@
+form {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  

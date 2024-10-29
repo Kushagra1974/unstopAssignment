@@ -1,0 +1,9 @@
+<form [formGroup]="seatForm" (ngSubmit)="allocateSeats()">
+    <label for="numSeats">Number of Seats:</label>
+    <input id="numSeats" formControlName="numSeats" type="number">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <p *ngIf="errorMessage">{{ errorMessage }}</p> <!-- Error message for exceeding seat limit -->
+<p>Seats Allotted: {{ seatsAllotted }}</p>
+  

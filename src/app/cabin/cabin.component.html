@@ -1,0 +1,10 @@
+<div class="cabin">
+    <div *ngFor="let row of getCabinSeats()" class="row">
+      <div *ngFor="let seat of row" 
+           [ngClass]="{'allocated': isSeatAllocated(seat)}" 
+           class="seat">
+        {{ seat }}
+      </div>
+    </div>
+  </div>
+  
