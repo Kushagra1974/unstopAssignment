@@ -15,7 +15,7 @@ export class SeatService {
 
     let allocatedSeats = this.seatsAllottedSource.getValue();      
     // if no previous allocated seat then simply allocate and return 
-    console.log("1" , allocatedSeats)
+
     if(allocatedSeats.length ==0){
       let allotedSeats: Array<number> = []
       for(let i=1;i<=seat;i++){
@@ -32,11 +32,8 @@ export class SeatService {
     //filing the matrix to indicate the occupied seat
     for(let i =0;i<allocatedSeats.length;i++){
       let filledSeat = allocatedSeats[i] -1;  
-      console.log("filled seat", filledSeat)
       let x = Math.floor(filledSeat/7);
-      let y = Math.max(Math.floor(filledSeat%7),0);
-
-      // console.log(x ,y, train[x])
+      let y = Math.floor(filledSeat%7);
 
       train[x][y] = 1;
     }
@@ -69,16 +66,13 @@ export class SeatService {
     let sum =0;
     let smallestDist = 1e7
     let nearestSeatAlloted : Array<Array<number>> = []
-    console.log(train);
     for(let i=0;i<12;i++){
       for(let j=0;j<7;j++){
 
         if(i===11 && j > 2) continue; 
-        console.log("i","j","seat",i,j,seat)
         if(train[i][j]  === 0){
           nearestSeat = [...nearestSeat , [i,j]]
           sum = sum + i + j;
-          console.log("nearestSeat 1" ,nearestSeat )
           if(nearestSeat.length === seat){
             let calSum = sum - seat*(nearestSeat[0][0] + nearestSeat[0][0])
             if(smallestDist > calSum){
@@ -90,7 +84,6 @@ export class SeatService {
         }
       }
     }
-    console.log("nearstallocatedseat",nearestSeatAlloted)
     let output = []
 
     for(let i=0;i<nearestSeatAlloted.length ;i++){
@@ -98,15 +91,12 @@ export class SeatService {
       let num = seat[0]*7 + seat[1] +1 ;
       output.push(num);
     }
-    console.log("output" , output);
-
     return [...allocatedSeats , ...output];
   }
 
   updateSeats(seats: number) {
     
     const allocatedSeats: Array<number> = this.allotSeat(seats)
-    // console.log(allocatedSeats);
     this.seatsAllottedSource.next(allocatedSeats);
   }
 }

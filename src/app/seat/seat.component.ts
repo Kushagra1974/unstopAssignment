@@ -50,7 +50,6 @@ export class SeatComponent implements OnInit  {
 
     let remainingSeats = this.totalSeats - this.allotedSeatsArray.length;
     let allocatedSeats:Array<Number> = [];
-    // console.log("1" , requestedSeats , remainingSeats)
     if (requestedSeats > remainingSeats) {
       this.seatsAllotted = 'Not enough seats available';
       setTimeout(() => {
