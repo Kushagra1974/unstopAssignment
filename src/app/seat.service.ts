@@ -97,4 +97,8 @@ export class SeatService {
     const allocatedSeats: Array<number> = this.allotSeat(seats)
     this.seatsAllottedSource.next(allocatedSeats);
   }
+
+  strictBook(seats : Array<number>){
+    this.seatsAllottedSource.next(seats)
+  } 
 }

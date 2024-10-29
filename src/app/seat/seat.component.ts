@@ -10,10 +10,11 @@ import { SeatService } from '../seat.service';
   templateUrl: './seat.component.html',
   styleUrls: ['./seat.component.css']
 })
-export class SeatComponent implements OnInit  {
+export class SeatComponent implements OnInit {
   seatForm: FormGroup;
+  arrayInputForm: FormGroup;
   seatsAllotted: string = '';
-  allotedSeatsArray : Array<number> = []
+  allotedSeatsArray: Array<number> = [];
   totalSeats = 80;
   errorMessage: string = '';  // For error messages
 
@@ -21,57 +22,61 @@ export class SeatComponent implements OnInit  {
     this.seatForm = this.fb.group({
       numSeats: ['', [Validators.required, Validators.min(1)]]
     });
+
+    // New form control for array input
+    this.arrayInputForm = this.fb.group({
+      seatNumbers: ['', Validators.required]
+    });
   }
 
   ngOnInit() {
     this.seatService.seatsAllotted$.subscribe(seats => {
-      this.seatsAllotted = seats.join(', '); // Update the component state with the latest seats
-      
-      this.allotedSeatsArray = seats
+      this.seatsAllotted = seats.join(', ');
+      this.allotedSeatsArray = seats;
     });
   }
 
-
   allocateSeats() {
-    const requestedSeats : number = this.seatForm.value.numSeats;
+    const requestedSeats: number = this.seatForm.value.numSeats;
 
     // Check if requested seats exceed 7
     if (requestedSeats > 7) {
       this.errorMessage = 'Only seven seats are available';
-      
-      // Clear the error message after 10 seconds
-      setTimeout(() => {
-        this.errorMessage = '';
-      }, 10000);
-      
+      setTimeout(() => (this.errorMessage = ''), 10000);
       return;
     }
 
-    if(requestedSeats<1){
-      this.errorMessage = 'Requested seat count should be greater that 0';
-      
-      // Clear the error message after 10 seconds
-      setTimeout(() => {
-        this.errorMessage = '';
-      }, 10000);
-      
+    if (requestedSeats < 1) {
+      this.errorMessage = 'Requested seat count should be greater than 0';
+      setTimeout(() => (this.errorMessage = ''), 10000);
       return;
     }
 
-
-    let remainingSeats = this.totalSeats - this.allotedSeatsArray.length;
-    let allocatedSeats:Array<Number> = [];
+    const remainingSeats = this.totalSeats - this.allotedSeatsArray.length;
     if (requestedSeats > remainingSeats) {
-      this.seatsAllotted = 'Not enough seats available';
-      setTimeout(() => {
-        this.errorMessage = '';
-      }, 10000);
+      this.errorMessage = 'Not enough seats available';
+      setTimeout(() => (this.errorMessage = ''), 10000);
       return;
     }
-
-
 
     this.seatService.updateSeats(requestedSeats);
-  
+  }
+
+  submitArrayInput() {
+    const seatNumbersString: string = this.arrayInputForm.value.seatNumbers;
+    const seatNumbersArray: number[] = seatNumbersString
+      .split(',')
+      .map((seat) => Number(seat.trim()))
+      .filter((seat) => !isNaN(seat)); 
+
+      for(let i =0;i<seatNumbersArray.length ;i++){
+        if(seatNumbersArray[i]>80 || seatNumbersArray[i]<0){
+          this.errorMessage = "Please Enter a valid range"
+          setTimeout(()=> (this.errorMessage = '') , 10000)
+          return
+        }
+      }
+
+      this.seatService.strictBook(seatNumbersArray);
   }
 }

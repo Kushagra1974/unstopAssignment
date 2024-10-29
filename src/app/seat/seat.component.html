@@ -1,9 +1,14 @@
 <form [formGroup]="seatForm" (ngSubmit)="allocateSeats()">
-    <label for="numSeats">Number of Seats:</label>
-    <input id="numSeats" formControlName="numSeats" type="number">
-    <button type="submit">Submit</button>
-  </form>
-  
-  <p *ngIf="errorMessage">{{ errorMessage }}</p> <!-- Error message for exceeding seat limit -->
+  <label for="numSeats">Number of Seats:</label>
+  <input id="numSeats" formControlName="numSeats" type="number" />
+  <button type="submit">Submit</button>
+</form>
+
+<p *ngIf="errorMessage">{{ errorMessage }}</p>
 <p>Seats Allotted: {{ seatsAllotted }}</p>
-  
+
+<form [formGroup]="arrayInputForm" (ngSubmit)="submitArrayInput()">
+  <label for="seatNumbers">Seat Numbers (comma-separated):</label>
+  <input id="seatNumbers" formControlName="seatNumbers" type="text" placeholder="e.g., 1, 2, 3" />
+  <button type="submit">Submit Array</button>
+</form>
