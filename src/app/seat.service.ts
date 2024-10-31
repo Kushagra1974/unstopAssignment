@@ -72,12 +72,25 @@ export class SeatService {
           nearestSeat = [...nearestSeat , [i,j]]
           sum = sum + i + j;
           if(nearestSeat.length === seat){
-            let calSum = sum - seat*(nearestSeat[0][0] + nearestSeat[0][0])
-            if(smallestDist > calSum){
-              smallestDist = calSum
-              nearestSeatAlloted = nearestSeat;
+            let avgDist = 0;
+            let n = nearestSeat.length
+            for(let k =0;k<n ;k++){
+              for(let l =k+1;l<n;l++){
+                let p1 = nearestSeat[k];
+                let p2 = nearestSeat[l];
+
+                let dist = Math.abs(p1[0] - p2[0]) + Math.abs(p1[1] - p2[1]);
+                avgDist += dist;
+              }
+            }
+            avgDist = avgDist/n;
+
+            if(smallestDist > avgDist){
+              smallestDist = avgDist
+              nearestSeatAlloted = [...nearestSeat];
             }
             sum = sum - nearestSeat[0][0] - nearestSeat[0][1];
+            nearestSeat.shift()
           }
         }
       }
@@ -93,7 +106,6 @@ export class SeatService {
   }
 
   updateSeats(seats: number) {
-    
     const allocatedSeats: Array<number> = this.allotSeat(seats)
     this.seatsAllottedSource.next(allocatedSeats);
   }
